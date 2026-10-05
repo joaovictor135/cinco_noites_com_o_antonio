@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://bwlk1majnoolq"]
+
+[ext_resource type="Script" uid="uid://cigfpsd1ffdpq" path="res://scripts/OfficeController.gd" id="1_3e7dm"]
+[ext_resource type="Script" uid="uid://c6jwvufad66jp" path="res://scripts/GameManager.gd" id="1_jwaux"]
+[ext_resource type="Script" uid="uid://busauq213pdco" path="res://scripts/PowerSystem.gd" id="2_7jj4f"]
+
+[node name="Office" type="Node2D" unique_id=1008047911]
+
+[node name="Background" type="ColorRect" parent="." unique_id=1243378847]
+offset_right = 1157.0
+offset_bottom = 720.0
+color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+
+[node name="Desk" type="ColorRect" parent="." unique_id=718423443]
+offset_left = 277.0
+offset_top = 512.0
+offset_right = 884.0
+offset_bottom = 635.0
+color = Color(0.30980393, 0.30980393, 0.30980393, 1)
+
+[node name="DoorLeft" type="ColorRect" parent="." unique_id=216372980]
+offset_right = 57.0
+offset_bottom = 720.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="DoorRight" type="ColorRect" parent="." unique_id=590323620]
+offset_left = 1099.0
+offset_top = 1.0
+offset_right = 1156.0
+offset_bottom = 721.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="LightLeft" type="ColorRect" parent="." unique_id=1980388389]
+offset_left = 56.0
+offset_top = 1.0
+offset_right = 256.0
+offset_bottom = 721.0
+color = Color(1, 1, 0, 0.1882353)
+
+[node name="LightRight" type="ColorRect" parent="." unique_id=2085980196]
+offset_left = 900.0
+offset_top = 2.0
+offset_right = 1100.0
+offset_bottom = 722.0
+color = Color(1, 1, 0, 0.1882353)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=38840890]
+
+[node name="PowerLabel" type="Label" parent="UI" unique_id=1786889775]
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 140.0
+offset_bottom = 43.0
+text = "Energia: 100%"
+
+[node name="NightLabel" type="Label" parent="UI" unique_id=1399973125]
+offset_left = 1000.0
+offset_top = 20.0
+offset_right = 1056.0
+offset_bottom = 69.0
+text = "Noite 1
+"
+
+[node name="CameraButton" type="Button" parent="UI" unique_id=1023360831]
+offset_left = 480.0
+offset_top = 535.0
+offset_right = 680.0
+offset_bottom = 585.0
+text = "CÂMERAS"
+
+[node name="DoorLeftButton" type="Button" parent="UI" unique_id=568247097]
+offset_left = 30.0
+offset_top = 500.0
+offset_right = 190.0
+offset_bottom = 550.0
+text = "PORTA E"
+
+[node name="DoorRightButton" type="Button" parent="UI" unique_id=989966544]
+offset_left = 965.0
+offset_top = 500.0
+offset_right = 1125.0
+offset_bottom = 550.0
+text = "PORTA D"
+
+[node name="LightLeftButton" type="Button" parent="UI" unique_id=1135761927]
+offset_left = 30.0
+offset_top = 560.0
+offset_right = 190.0
+offset_bottom = 610.0
+text = "LUZ E"
+
+[node name="LightRightButton" type="Button" parent="UI" unique_id=1575179586]
+offset_left = 965.0
+offset_top = 560.0
+offset_right = 1125.0
+offset_bottom = 610.0
+text = "LUZ D"
+
+[node name="Systems" type="Node" parent="." unique_id=647911842]
+
+[node name="GameManager" type="Node" parent="Systems" unique_id=765356864]
+script = ExtResource("1_jwaux")
+
+[node name="PowerSystem" type="Node" parent="Systems" unique_id=2146886883]
+script = ExtResource("2_7jj4f")
+
+[node name="CameraSystem" type="Node" parent="Systems" unique_id=1378236489]
+
+[node name="OfficeController" type="Node" parent="Systems" unique_id=2106965176]
+script = ExtResource("1_3e7dm")

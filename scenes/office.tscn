@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://bwlk1majnoolq"]
+
+[ext_resource type="Script" uid="uid://cigfpsd1ffdpq" path="res://scripts/OfficeController.gd" id="1_3e7dm"]
+[ext_resource type="Texture2D" uid="uid://cgcvte86i32tv" path="res://sprites/cameras/biblioteca.png" id="1_7jj4f"]
+[ext_resource type="Script" uid="uid://c6jwvufad66jp" path="res://scripts/GameManager.gd" id="1_jwaux"]
+[ext_resource type="Script" uid="uid://busauq213pdco" path="res://scripts/PowerSystem.gd" id="2_7jj4f"]
+[ext_resource type="Texture2D" uid="uid://la2wdbjcol58" path="res://sprites/antonio/antonio.png" id="2_hub07"]
+[ext_resource type="Texture2D" uid="uid://b1d1bnloudv6u" path="res://sprites/cameras/biblioteca_overlay.png" id="3_2knxt"]
+[ext_resource type="Script" uid="uid://bb6moo176wgms" path="res://scenes/CameraSystem.gd" id="4_qphb6"]
+
+[node name="Office" type="Node2D" unique_id=1008047911]
+
+[node name="Background" type="ColorRect" parent="." unique_id=1243378847]
+offset_right = 1157.0
+offset_bottom = 720.0
+color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+
+[node name="Desk" type="ColorRect" parent="." unique_id=718423443]
+offset_left = 277.0
+offset_top = 512.0
+offset_right = 884.0
+offset_bottom = 635.0
+color = Color(0.30980393, 0.30980393, 0.30980393, 1)
+
+[node name="DoorLeft" type="ColorRect" parent="." unique_id=216372980]
+offset_right = 57.0
+offset_bottom = 720.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="DoorRight" type="ColorRect" parent="." unique_id=590323620]
+offset_left = 1099.0
+offset_top = 1.0
+offset_right = 1156.0
+offset_bottom = 721.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="LightLeft" type="ColorRect" parent="." unique_id=1980388389]
+offset_left = 56.0
+offset_top = 1.0
+offset_right = 256.0
+offset_bottom = 721.0
+color = Color(1, 1, 0, 0.1882353)
+
+[node name="LightRight" type="ColorRect" parent="." unique_id=2085980196]
+offset_left = 900.0
+offset_top = 2.0
+offset_right = 1100.0
+offset_bottom = 722.0
+color = Color(1, 1, 0, 0.1882353)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=38840890]
+
+[node name="OfficeImage" type="TextureRect" parent="UI" unique_id=554431251]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PowerLabel" type="Label" parent="UI" unique_id=1786889775]
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 140.0
+offset_bottom = 43.0
+text = "Energia: 100%"
+
+[node name="NightLabel" type="Label" parent="UI" unique_id=1399973125]
+offset_left = 1000.0
+offset_top = 20.0
+offset_right = 1056.0
+offset_bottom = 69.0
+text = "Noite 1
+"
+
+[node name="CameraButton" type="Button" parent="UI" unique_id=1023360831]
+offset_left = 480.0
+offset_top = 535.0
+offset_right = 680.0
+offset_bottom = 585.0
+text = "CÂMERAS"
+
+[node name="DoorLeftButton" type="Button" parent="UI" unique_id=568247097]
+offset_left = 30.0
+offset_top = 500.0
+offset_right = 190.0
+offset_bottom = 550.0
+text = "PORTA E"
+
+[node name="DoorRightButton" type="Button" parent="UI" unique_id=989966544]
+offset_left = 965.0
+offset_top = 500.0
+offset_right = 1125.0
+offset_bottom = 550.0
+text = "PORTA D"
+
+[node name="LightLeftButton" type="Button" parent="UI" unique_id=1135761927]
+offset_left = 30.0
+offset_top = 560.0
+offset_right = 190.0
+offset_bottom = 610.0
+text = "LUZ E"
+
+[node name="LightRightButton" type="Button" parent="UI" unique_id=1575179586]
+offset_left = 965.0
+offset_top = 560.0
+offset_right = 1125.0
+offset_bottom = 610.0
+text = "LUZ D"
+
+[node name="CameraPanel" type="ColorRect" parent="UI" unique_id=236434550]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CameraImage" type="TextureRect" parent="UI/CameraPanel" unique_id=143459879]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_7jj4f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AntonioImage" type="TextureRect" parent="UI/CameraPanel/CameraImage" unique_id=62635730]
+self_modulate = Color(0.1254902, 0.15686275, 0.1882353, 1)
+use_parent_material = true
+layout_mode = 0
+offset_left = 234.0
+offset_top = 216.0
+offset_right = 405.0
+offset_bottom = 531.0
+mouse_filter = 2
+texture = ExtResource("2_hub07")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FurnitureOverlay" type="TextureRect" parent="UI/CameraPanel/CameraImage" unique_id=688855009]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_2knxt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CameraButtons" type="HBoxContainer" parent="UI/CameraPanel" unique_id=784357531]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 580.0
+offset_right = 786.0
+offset_bottom = 625.0
+
+[node name="LibraryButton" type="Button" parent="UI/CameraPanel/CameraButtons" unique_id=1980964133]
+custom_minimum_size = Vector2(150, 45)
+layout_mode = 2
+text = "BIBLIOTECA"
+
+[node name="ClassroomButton" type="Button" parent="UI/CameraPanel/CameraButtons" unique_id=1141907128]
+custom_minimum_size = Vector2(150, 45)
+layout_mode = 2
+text = "SALA DE AULA"
+
+[node name="CafeteriaButton" type="Button" parent="UI/CameraPanel/CameraButtons" unique_id=1061674348]
+custom_minimum_size = Vector2(150, 45)
+layout_mode = 2
+text = "REFEITÓRIO"
+
+[node name="CourtyardButton" type="Button" parent="UI/CameraPanel/CameraButtons" unique_id=189193792]
+custom_minimum_size = Vector2(150, 45)
+layout_mode = 2
+text = "PÁTIO"
+
+[node name="NightVisionButton" type="Button" parent="UI/CameraPanel/CameraButtons" unique_id=1406792286]
+custom_minimum_size = Vector2(180, 45)
+layout_mode = 2
+text = "VISÃO NOTURNA: OFF"
+
+[node name="CloseButton" type="Button" parent="UI/CameraPanel/CameraButtons" unique_id=1459766725]
+custom_minimum_size = Vector2(150, 45)
+layout_mode = 2
+text = "VOLTAR"
+
+[node name="CameraName" type="Label" parent="UI/CameraPanel" unique_id=1832597162]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 183.0
+offset_bottom = 43.0
+text = "CAM 01 - BIBLIOTECA"
+
+[node name="Systems" type="Node" parent="." unique_id=647911842]
+
+[node name="GameManager" type="Node" parent="Systems" unique_id=765356864]
+script = ExtResource("1_jwaux")
+
+[node name="PowerSystem" type="Node" parent="Systems" unique_id=2146886883]
+script = ExtResource("2_7jj4f")
+
+[node name="CameraSystem" type="Node" parent="Systems" unique_id=1378236489]
+script = ExtResource("4_qphb6")
+
+[node name="OfficeController" type="Node" parent="Systems" unique_id=2106965176]
+script = ExtResource("1_3e7dm")
