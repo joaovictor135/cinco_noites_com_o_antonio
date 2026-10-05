@@ -1,6 +1,0 @@
-res://scenes/main_menu.tscn
-res://scripts/GameManager.gd
-res://scenes/CameraSystem.gd
-res://scripts/CameraMap.gd
-res://scripts/OfficeController.gd
-res://scripts/ExtraCharacters.gd
